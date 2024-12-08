@@ -1,0 +1,13 @@
+@import 'styles';
+
+.box-one {
+    @media (min-width: $break-lg) {
+        align-items: center;
+    }
+}
+
+.boxs-container-one {
+    @media (min-width: $break-lg) {
+        flex-direction: row-reverse;
+   }
+}

@@ -1,0 +1,8 @@
+<h2 class="title-m font-bold">Sección 2: Pieza de Producto</h2>
+<ul class="products">
+    @for (product of products$ | async; track product.id) {
+        <li>
+            <article app-product-card [product]="product"></article>
+        </li>
+    }
+</ul>

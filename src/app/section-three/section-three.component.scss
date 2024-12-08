@@ -1,0 +1,16 @@
+@import 'styles';
+
+.products {
+    @media (min-width: $break-sm) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $break-md) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: $break-lg) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
