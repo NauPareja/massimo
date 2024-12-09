@@ -77,3 +77,6 @@ Esta semántica permite crear una web con un código fácil de entender, accesib
 ###  Accesibilidad
 Al pasar la validación con la herramienta Wave, podemos ver que no hay errores y que se muestra un árbol de navegación fácil de seguir para los usuarios.
 
+Los atributos alt de las imágenes están vacíos porque la imagen es decorativa, no aporta información, y el contenido de la propia tarjeta ya explica su propósito.
+
+![image](https://github.com/user-attachments/assets/ec244fb2-4457-4a23-a8a9-d00a8d257199)
