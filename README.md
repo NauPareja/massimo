@@ -67,9 +67,9 @@ Teniendo en cuenta que la web ha sido implementada en base a las buenas práctic
 
 Consideraciones
 - main: Representa el contenido principal de la página, es único en el documento y excluye cualquier contenido que se repita a través de un conjunto de documentos (por ejemplo, el header o el footer).
-- h1...h6: He modificado las especificaciones del enunciado para proveer una jerarquía de títulos clara en el contenido.
+- h1...h6: He modificado las especificaciones del enunciado para proveer al contenido una jerarquía de títulos clara y ordenada.
 - section: Tres secciones que representan partes independientes del documento, cada una con su título relacionado.
-- article: Envuelven las product-card, las cuales son una composición auto-contenida, independiente y reutilizable.
+- article: Son las product-card, las cuales son una composición auto-contenida, independiente y reutilizable.
 - ul, li: Las product-card se presentan como un listado de elementos no ordenados, ya que su orden no es relevante.
 
 Esta semántica permite crear una web con un código fácil de entender, accesible y orientado al SEO.
