@@ -1,59 +1,79 @@
-# Test
+## Cómo probar la solución
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.4.
+Aplicación desarrollada con Angular 19.
 
-## Development server
+Instalar las dependencias:
+```bash
+npm install
+```
 
-To start a local development server, run:
-
+Iniciar la aplicación:
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navegar a la ruta `http://localhost:4200/`
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Decisiones de desarrollo
 
-```bash
-ng generate component component-name
+### Uso de la líbreria HolyGrail
+He utilizado la documentación y el código CSS compilado (debido a las limitaciones de la propia documentación).
+
+### Mobile First
+La aplicación ha sido implementada siguiendo las buenas prácticas de Mobile First, es decir, el contenido crece desde pantallas de 0px hacia arriba, adaptándose a diferentes tamaños de pantalla.
+
+### 'Error' en el enunciado de la Sección 1
+La Sección 1 especifica: "Un contenedor flexible que muestre dos bloques en una fila para pantallas grandes y que los invierta en pantallas pequeñas (sm:reverse)."
+
+Teniendo en cuenta que la web ha sido implementada en base a las buenas prácticas de Mobile First, la lógica implementada es la inversa. Por tanto, los bloques se invierten en pantallas grandes y no en pantallas pequeñas.
+
+###  Estructura de la web
+```html
+<main>
+  <h1>Página de inicio</h1>
+  <section app-section-one>
+      <h2>Sección 1: Layout Estructural con Cambio de Orden</h2>
+      ....
+  </section>
+  <section app-section-two>
+    <h2>Sección 2: Pieza de Producto</h2>
+    <ul>
+        @for (product of products$) {
+            <li>
+                <article app-product-card>
+                  <h3>Título del producto</h3>
+                  ...
+                </article>
+            </li>
+        }
+    </ul>
+  </section>
+  <section app-section-three>
+    <h2>Sección 3: Layout tipo Parrilla de Productos</h2>
+    <ul>
+        @for (product of products$) {
+            <li>
+                <article app-product-card>
+                  <h3>Título del producto</h3>
+                  ...
+                </article>
+            </li>
+        }
+    </ul>
+  </section>
+</main>
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Consideraciones
+- main: Representa el contenido principal de la página, es único en el documento y excluye cualquier contenido que se repita a través de un conjunto de documentos (por ejemplo, el header o el footer).
+- h1...h6: He modificado las especificaciones del enunciado para proveer una jerarquía de títulos clara en el contenido.
+- section: Tres secciones que representan partes independientes del documento, cada una con su título relacionado.
+- article: Envuelven las product-card, las cuales son una composición auto-contenida, independiente y reutilizable.
+- ul, li: Las product-card se presentan como un listado de elementos no ordenados, ya que su orden no es relevante.
 
-```bash
-ng generate --help
-```
+Esta semántica permite crear una web con un código fácil de entender, accesible y orientado al SEO.
 
-## Building
+###  Accesibilidad
+Al pasar la validación con la herramienta Wave, podemos ver que no hay errores y que se muestra un árbol de navegación fácil de seguir para los usuarios.
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
